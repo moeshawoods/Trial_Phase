@@ -21,6 +21,7 @@ def create_folder(directory):
 def file_rename(directory,new_folder_path):
     root_directory= directory
     new_folder_path_root= new_folder_path
+    count = 1
     with os.scandir(root_directory) as devices:
         current_device_id = 1
         for device_name in devices:
@@ -54,9 +55,15 @@ def file_rename(directory,new_folder_path):
                             temp_dataframe = pd.DataFrame(data=temp_data[1:, 0:], columns=temp_data[0, 0:])
 
                             temp_dataframe.to_csv(new_file_path)
+                            ##copyfile(current_file_name, os.path.join("C:/Users/moesh/Desktop/Data", new_file_name))
+
                             current_posture_id = current_posture_id + 1
                             current_session = current_session + 1
-        current_device_id = current_device_id +1
+                            ## should i replace or make a copy with new name?
+                            ##os.rename(current_file_name,os.path.join("C:/Users/moesh/Desktop/temp/",new_file_name))"""
+
+            current_device_id = current_device_id +1
+
 
 
 
